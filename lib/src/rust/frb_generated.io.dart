@@ -21,18 +21,9 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
   CrossPlatformFinalizerArg get rust_arc_decrement_strong_count_NluPtr => wire
       ._rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerNLUPtr;
 
-  CrossPlatformFinalizerArg
-      get rust_arc_decrement_strong_count_SnipsNluLibOntologyIntentParserResultPtr =>
-          wire._rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnersnips_nlu_libontologyIntentParserResultPtr;
-
   @protected
   Nlu dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerNLU(
       dynamic raw);
-
-  @protected
-  SnipsNluLibOntologyIntentParserResult
-      dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnersnips_nlu_libontologyIntentParserResult(
-          dynamic raw);
 
   @protected
   Nlu dco_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerNLU(
@@ -41,11 +32,6 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
   @protected
   Nlu dco_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerNLU(
       dynamic raw);
-
-  @protected
-  SnipsNluLibOntologyIntentParserResult
-      dco_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnersnips_nlu_libontologyIntentParserResult(
-          dynamic raw);
 
   @protected
   String dco_decode_String(dynamic raw);
@@ -67,22 +53,12 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
       SseDeserializer deserializer);
 
   @protected
-  SnipsNluLibOntologyIntentParserResult
-      sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnersnips_nlu_libontologyIntentParserResult(
-          SseDeserializer deserializer);
-
-  @protected
   Nlu sse_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerNLU(
       SseDeserializer deserializer);
 
   @protected
   Nlu sse_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerNLU(
       SseDeserializer deserializer);
-
-  @protected
-  SnipsNluLibOntologyIntentParserResult
-      sse_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnersnips_nlu_libontologyIntentParserResult(
-          SseDeserializer deserializer);
 
   @protected
   String sse_decode_String(SseDeserializer deserializer);
@@ -112,11 +88,6 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
 
   @protected
   void
-      sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnersnips_nlu_libontologyIntentParserResult(
-          SnipsNluLibOntologyIntentParserResult self, SseSerializer serializer);
-
-  @protected
-  void
       sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerNLU(
           Nlu self, SseSerializer serializer);
 
@@ -124,11 +95,6 @@ abstract class RustLibApiImplPlatform extends BaseApiImpl<RustLibWire> {
   void
       sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerNLU(
           Nlu self, SseSerializer serializer);
-
-  @protected
-  void
-      sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnersnips_nlu_libontologyIntentParserResult(
-          SnipsNluLibOntologyIntentParserResult self, SseSerializer serializer);
 
   @protected
   void sse_encode_String(String self, SseSerializer serializer);
@@ -197,37 +163,5 @@ class RustLibWire implements BaseWire {
           'frbgen_testflutterbridge_rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerNLU');
   late final _rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerNLU =
       _rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerNLUPtr
-          .asFunction<void Function(ffi.Pointer<ffi.Void>)>();
-
-  void
-      rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnersnips_nlu_libontologyIntentParserResult(
-    ffi.Pointer<ffi.Void> ptr,
-  ) {
-    return _rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnersnips_nlu_libontologyIntentParserResult(
-      ptr,
-    );
-  }
-
-  late final _rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnersnips_nlu_libontologyIntentParserResultPtr =
-      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>(
-          'frbgen_testflutterbridge_rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnersnips_nlu_libontologyIntentParserResult');
-  late final _rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnersnips_nlu_libontologyIntentParserResult =
-      _rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnersnips_nlu_libontologyIntentParserResultPtr
-          .asFunction<void Function(ffi.Pointer<ffi.Void>)>();
-
-  void
-      rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnersnips_nlu_libontologyIntentParserResult(
-    ffi.Pointer<ffi.Void> ptr,
-  ) {
-    return _rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnersnips_nlu_libontologyIntentParserResult(
-      ptr,
-    );
-  }
-
-  late final _rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnersnips_nlu_libontologyIntentParserResultPtr =
-      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ffi.Void>)>>(
-          'frbgen_testflutterbridge_rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnersnips_nlu_libontologyIntentParserResult');
-  late final _rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnersnips_nlu_libontologyIntentParserResult =
-      _rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnersnips_nlu_libontologyIntentParserResultPtr
           .asFunction<void Function(ffi.Pointer<ffi.Void>)>();
 }

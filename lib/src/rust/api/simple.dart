@@ -31,28 +31,7 @@ class Nlu extends RustOpaque {
       RustLib.instance.api
           .crateApiSimpleNluNew(engineDir: engineDir, hint: hint);
 
-  Future<SnipsNluLibOntologyIntentParserResult> parseIntent(
-          {required String input, dynamic hint}) =>
+  Future<String> parseIntent({required String input, dynamic hint}) =>
       RustLib.instance.api
           .crateApiSimpleNluParseIntent(that: this, input: input, hint: hint);
-}
-
-// Rust type: RustOpaqueMoi<flutter_rust_bridge::for_generated::RustAutoOpaqueInner<snips_nlu_lib :: ontology :: IntentParserResult>>
-@sealed
-class SnipsNluLibOntologyIntentParserResult extends RustOpaque {
-  SnipsNluLibOntologyIntentParserResult.dcoDecode(List<dynamic> wire)
-      : super.dcoDecode(wire, _kStaticData);
-
-  SnipsNluLibOntologyIntentParserResult.sseDecode(
-      int ptr, int externalSizeOnNative)
-      : super.sseDecode(ptr, externalSizeOnNative, _kStaticData);
-
-  static final _kStaticData = RustArcStaticData(
-    rustArcIncrementStrongCount: RustLib.instance.api
-        .rust_arc_increment_strong_count_SnipsNluLibOntologyIntentParserResult,
-    rustArcDecrementStrongCount: RustLib.instance.api
-        .rust_arc_decrement_strong_count_SnipsNluLibOntologyIntentParserResult,
-    rustArcDecrementStrongCountPtr: RustLib.instance.api
-        .rust_arc_decrement_strong_count_SnipsNluLibOntologyIntentParserResultPtr,
-  );
 }

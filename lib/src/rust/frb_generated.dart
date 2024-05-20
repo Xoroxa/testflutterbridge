@@ -69,7 +69,7 @@ class RustLib extends BaseEntrypoint<RustLibApi, RustLibApiImpl, RustLibWire> {
 abstract class RustLibApi extends BaseApi {
   Future<Nlu> crateApiSimpleNluNew({required String engineDir, dynamic hint});
 
-  Future<SnipsNluLibOntologyIntentParserResult> crateApiSimpleNluParseIntent(
+  Future<String> crateApiSimpleNluParseIntent(
       {required Nlu that, required String input, dynamic hint});
 
   String crateApiSimpleGreet({required String name, dynamic hint});
@@ -81,15 +81,6 @@ abstract class RustLibApi extends BaseApi {
   RustArcDecrementStrongCountFnType get rust_arc_decrement_strong_count_Nlu;
 
   CrossPlatformFinalizerArg get rust_arc_decrement_strong_count_NluPtr;
-
-  RustArcIncrementStrongCountFnType
-      get rust_arc_increment_strong_count_SnipsNluLibOntologyIntentParserResult;
-
-  RustArcDecrementStrongCountFnType
-      get rust_arc_decrement_strong_count_SnipsNluLibOntologyIntentParserResult;
-
-  CrossPlatformFinalizerArg
-      get rust_arc_decrement_strong_count_SnipsNluLibOntologyIntentParserResultPtr;
 }
 
 class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
@@ -127,7 +118,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
       );
 
   @override
-  Future<SnipsNluLibOntologyIntentParserResult> crateApiSimpleNluParseIntent(
+  Future<String> crateApiSimpleNluParseIntent(
       {required Nlu that, required String input, dynamic hint}) {
     return handler.executeNormal(NormalTask(
       callFfi: (port_) {
@@ -139,8 +130,7 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
             funcId: 4, port: port_);
       },
       codec: SseCodec(
-        decodeSuccessData:
-            sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnersnips_nlu_libontologyIntentParserResult,
+        decodeSuccessData: sse_decode_String,
         decodeErrorData: null,
       ),
       constMeta: kCrateApiSimpleNluParseIntentConstMeta,
@@ -210,28 +200,11 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   RustArcDecrementStrongCountFnType get rust_arc_decrement_strong_count_Nlu => wire
       .rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerNLU;
 
-  RustArcIncrementStrongCountFnType
-      get rust_arc_increment_strong_count_SnipsNluLibOntologyIntentParserResult =>
-          wire.rust_arc_increment_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnersnips_nlu_libontologyIntentParserResult;
-
-  RustArcDecrementStrongCountFnType
-      get rust_arc_decrement_strong_count_SnipsNluLibOntologyIntentParserResult =>
-          wire.rust_arc_decrement_strong_count_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnersnips_nlu_libontologyIntentParserResult;
-
   @protected
   Nlu dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerNLU(
       dynamic raw) {
     // Codec=Dco (DartCObject based), see doc to use other codecs
     return Nlu.dcoDecode(raw as List<dynamic>);
-  }
-
-  @protected
-  SnipsNluLibOntologyIntentParserResult
-      dco_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnersnips_nlu_libontologyIntentParserResult(
-          dynamic raw) {
-    // Codec=Dco (DartCObject based), see doc to use other codecs
-    return SnipsNluLibOntologyIntentParserResult.dcoDecode(
-        raw as List<dynamic>);
   }
 
   @protected
@@ -246,15 +219,6 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
       dynamic raw) {
     // Codec=Dco (DartCObject based), see doc to use other codecs
     return Nlu.dcoDecode(raw as List<dynamic>);
-  }
-
-  @protected
-  SnipsNluLibOntologyIntentParserResult
-      dco_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnersnips_nlu_libontologyIntentParserResult(
-          dynamic raw) {
-    // Codec=Dco (DartCObject based), see doc to use other codecs
-    return SnipsNluLibOntologyIntentParserResult.dcoDecode(
-        raw as List<dynamic>);
   }
 
   @protected
@@ -296,15 +260,6 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   }
 
   @protected
-  SnipsNluLibOntologyIntentParserResult
-      sse_decode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnersnips_nlu_libontologyIntentParserResult(
-          SseDeserializer deserializer) {
-    // Codec=Sse (Serialization based), see doc to use other codecs
-    return SnipsNluLibOntologyIntentParserResult.sseDecode(
-        sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
-  }
-
-  @protected
   Nlu sse_decode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerNLU(
       SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
@@ -317,15 +272,6 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
       SseDeserializer deserializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     return Nlu.sseDecode(
-        sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
-  }
-
-  @protected
-  SnipsNluLibOntologyIntentParserResult
-      sse_decode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnersnips_nlu_libontologyIntentParserResult(
-          SseDeserializer deserializer) {
-    // Codec=Sse (Serialization based), see doc to use other codecs
-    return SnipsNluLibOntologyIntentParserResult.sseDecode(
         sse_decode_usize(deserializer), sse_decode_i_32(deserializer));
   }
 
@@ -382,15 +328,6 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
 
   @protected
   void
-      sse_encode_Auto_Owned_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnersnips_nlu_libontologyIntentParserResult(
-          SnipsNluLibOntologyIntentParserResult self,
-          SseSerializer serializer) {
-    // Codec=Sse (Serialization based), see doc to use other codecs
-    sse_encode_usize(self.sseEncode(move: true), serializer);
-  }
-
-  @protected
-  void
       sse_encode_Auto_Ref_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerNLU(
           Nlu self, SseSerializer serializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
@@ -401,15 +338,6 @@ class RustLibApiImpl extends RustLibApiImplPlatform implements RustLibApi {
   void
       sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnerNLU(
           Nlu self, SseSerializer serializer) {
-    // Codec=Sse (Serialization based), see doc to use other codecs
-    sse_encode_usize(self.sseEncode(move: null), serializer);
-  }
-
-  @protected
-  void
-      sse_encode_RustOpaque_flutter_rust_bridgefor_generatedRustAutoOpaqueInnersnips_nlu_libontologyIntentParserResult(
-          SnipsNluLibOntologyIntentParserResult self,
-          SseSerializer serializer) {
     // Codec=Sse (Serialization based), see doc to use other codecs
     sse_encode_usize(self.sseEncode(move: null), serializer);
   }
